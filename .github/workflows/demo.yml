@@ -1,0 +1,15 @@
+name: workflow
+on:
+  workflow_dispatch:
+    inputs:
+      typed_name:
+        description: 'Type your name'
+        required: true
+        type: string
+
+jobs:
+  gretings:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Typed_greting
+        run: echo "Hello ${{ github.event.inputs.typed_name }}"
